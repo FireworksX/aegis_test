@@ -1,11 +1,11 @@
 <template lang="pug">
 
-  .contacts-section(v-show="hasSection")
+  .contacts-section(v-show="hasSection" :class="{ 'contacts-section_editable': editable }")
     base-info-cell.profile-contacts__cell(v-if="state === 'visible'")
       icon-24-mobilephone.profile-contacts__cell-icon(slot="before")
       base-text(color="primary") {{ parsedPhone }}
       base-text(slot="description" color="gray-darken-1-400" size="xsm") {{ description }}
-      button-edit(v-if="editable" slot="aside" @press="clickEdit")
+      button-edit.contacts-section__edit(v-if="editable" slot="aside" @press="clickEdit")
     template(v-else)
       wrap-submit(
         @cancel="cancelChange"
@@ -68,4 +68,17 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.contacts-section_editable {
+    &:hover {
+        .contacts-section__edit {
+            opacity: 1;
+        }
+    }
+}
+
+.contacts-section__edit {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+</style>
