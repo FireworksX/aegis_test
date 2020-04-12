@@ -1,0 +1,14 @@
+<template>
+    <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M14 0L-1.48619e-06 1.22392e-06L-1.31134e-06 2L14 2L14 0ZM-5.24537e-07 11L4 11L4 17L10 17L10 11L14 11L7 4L-5.24537e-07 11Z"
+            fill="currentColor"
+        />
+    </svg>
+</template>
+
+<script>
+export default {
+    name: 'icon-24-upload',
+}
+</script>
